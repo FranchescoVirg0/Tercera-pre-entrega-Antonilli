@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+    <h1> Lista de Expensas</h1>
+    <p></p>
+
+    <div class="row col-12 justify-content-end mb=2 pr=0">
+        <!--<button type="button" class="btn btn-success col-md-3">Agregar Nuevo</button>-->
+        <a class= "btn btn-success col-md-3" href="{% url "registrarExpensa"  %}">Agregar Nueva</a>
+    </div>
+    <p></p>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Fecha venc</th>
+            <th scope="col">Pagada</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for Expensa in Expensas %}
+        
+        <tr>
+            <th scope="row"> {{ Expensa.id }} </th>
+            <td>{{Expensa.nombre}}</td>
+            <td>{{Expensa.fecha_venc}}</td>
+            <td>{{Expensa.pagada}}</td>
+        </tr>
+        
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

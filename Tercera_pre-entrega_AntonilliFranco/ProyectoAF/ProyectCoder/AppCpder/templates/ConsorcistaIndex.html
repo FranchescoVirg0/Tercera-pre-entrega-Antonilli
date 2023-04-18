@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{%load crispy_forms_tags%}
+
+{%block content%}
+
+    {% if form.errors %}
+    <div class="alert alert-danger" role="alert">
+        Parece que a ocurrido un error, intentelo de nuevo
+    </div>
+    {% endif %}
+
+    <h1> Registro de Consorcista</h1>
+    
+    <form action="{% url "guardarConsorcista" %}" method="POST">
+        {% csrf_token %}
+        {% if mensaje %}
+            <div class="alert alert-success" role="alert">
+                Consorcista registrado
+            </div>
+        {% endif %}
+        
+        {{ form }}
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+{%endblock%}

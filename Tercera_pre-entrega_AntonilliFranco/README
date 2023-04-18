@@ -1,0 +1,12 @@
+
+una vez se inicia el servidor, ingresar a el path home, y de ahi en adelante entrar desde los links.
+
+esta echo con librerias de bootstrap.
+
+La funcion de la pagina es poder registrar 3 modelos en una BD
+y la pagina ademas muestra la BD.
+
+Todo esta echo con herencia del archivo index.html
+
+
+espero todo este correcto, nos vemos.

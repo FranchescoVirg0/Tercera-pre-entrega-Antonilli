@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+    <h1> Lista de Administradores</h1>
+    <p></p>
+
+    <div class="row col-12 justify-content-end mb=2 pr=0">
+        <!--<button type="button" class="btn btn-success col-md-3">Agregar Nuevo</button>-->
+        <a class= "btn btn-success col-md-3" href="{% url "registrarAdministrador"  %}">Agregar Nuevo</a>
+    </div>
+    <p></p>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for Administrador in Administradores %}
+        
+        <tr>
+            <th scope="row"> {{ Administrador.id }} </th>
+            <td>{{Administrador.nombre}}</td>
+            <td>{{Administrador.apellido}}</td>
+            <td>{{Administrador.Email}}</td>
+        </tr>
+        
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
